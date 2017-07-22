@@ -1,0 +1,62 @@
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.frameTable {
+	width: 100%;
+	height: 100%;
+
+	& td {
+		vertical-align: top;
+	}
+
+	& .tdMenu {
+		width: 200px;
+		border-right: solid 1px #ccc;
+		& .divMenu {
+			overflow-y: auto;
+			& ul {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+
+				& li {
+					color: #333;
+					cursor: pointer;
+
+					&:hover {
+						color: #000099;
+						text-decoration: underline;
+					}
+					&.active {
+						color: #0000cc;
+						font-weight: 600;
+					}
+				}
+			}
+		}	
+	}
+
+	& .tdContainer {
+		& .divContainer {
+			width: 100%;
+			height: 100%;
+			background-color: #c3deb7;
+
+			
+		}
+	}
+
+	& .tdControl {
+		& table {
+			width: 100%;
+		}
+	}
+}
