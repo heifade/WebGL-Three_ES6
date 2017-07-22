@@ -7,6 +7,8 @@ export default class TriangularCone extends Base {
 		super(container, $control, {showFloor: true});
 
     this.draw({y: 200, color: 0xFF0000});
+
+    
     
     let {geometry} = this.mesh1;
     for(let i=0;i<4;i++){
@@ -14,14 +16,15 @@ export default class TriangularCone extends Base {
       this.addControlRange({ title: `点${i+1}Y`, hashData: geometry.vertices[i], key: "y",  max: 5, min: -5, step:0.1, onChange: () => {geometry.verticesNeedUpdate = true;}});
       this.addControlRange({ title: `点${i+1}Z`, hashData: geometry.vertices[i], key: "z",  max: 5, min: -5, step:0.1, onChange: () => {geometry.verticesNeedUpdate = true;}});  
     }
+    this.addControlCheck({ title: `仅线框`, hashData: this.material1, key: 'wireframe'});
 	}
 
-	draw({x = 0, y = 0, z = 0, w = 300, h = 300, d = 300, color = 0xffffff}) {
+	draw({x = 0, y = 0, z = 0, w = 300, h = 300, d = 300}) {
     let vertices = [
       new THREE.Vector3(0.3, 1, 0),
-      new THREE.Vector3(1,-1,-1),
-      new THREE.Vector3(1,-1,1),
-      new THREE.Vector3(-1,-1,-1),
+      new THREE.Vector3(1,0,-1),
+      new THREE.Vector3(1,0,1),
+      new THREE.Vector3(-1,0,-1),
     ];
 
     let faces = [
@@ -40,8 +43,11 @@ export default class TriangularCone extends Base {
     geometry.verticesNeedUpdate = true;
     geometry.computeFaceNormals(); //计算侧面
 
-    let material = new THREE.MeshLambertMaterial({color: color});//材质
-    this.mesh1 = new THREE.Mesh(geometry, material);
+    this.material1 = new THREE.MeshLambertMaterial({color: '#ff0000'});//材质
+    this.material1.wireframe = true;
+
+    
+    this.mesh1 = new THREE.Mesh(geometry, this.material1);
     this.mesh1.castShadow = true;
 		this.mesh1.position.set(x, y, z);
     this.mesh1.scale.x = w;

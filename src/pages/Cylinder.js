@@ -47,12 +47,11 @@ export default class CylinderGroup extends Base {
       this.data.height, // 圆柱高度 Height of the cylinder. Default is 100.
       this.data.radiusSegments, // 侧面个数 Number of segmented faces around the circumference of the cylinder. Default is 8
       this.data.heightSegments, // Number of rows of faces along the height of the cylinder. Default is 1.
-      this.data.openEnded, //圆柱体的两端是否显示 A Boolean indicating whether the ends of the cylinder are open or capped. Default is false, meaning capped.
+      !this.data.openEnded, //圆柱体的两端是否显示 A Boolean indicating whether the ends of the cylinder are open or capped. Default is false, meaning capped.
       this.data.thetaStart / 180 * Math.PI, //Start angle for first segment, default = 0 (three o'clock position).
       this.data.thetaLength / 180 * Math.PI, //The central angle, often called theta, of the circular sector. The default is 2*Pi, which makes for a complete cylinder.
     );
 
-    console.log(this.data.openEnded);
     
     this.mesh1 = new THREE.Mesh(geometry, this.material1);
     this.mesh1.position.set(0, 0, 0);
