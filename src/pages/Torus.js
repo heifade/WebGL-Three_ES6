@@ -20,12 +20,12 @@ export default class Torus extends Base {
 
 		this.draw();
 
-		this.addControlRange({ title: `圆环半径`, hashData: this.data, key: "radius",  max: 1000, min: 10, step:1, onChange: () => {this.draw();}});
-		this.addControlRange({ title: `管子直径`, hashData: this.data, key: "tube",  max: 1000, min: 10, step:1, onChange: () => {this.draw();}});
-		this.addControlRange({ title: `管子分段`, hashData: this.data, key: "radialSegments",  max: 500, min: 3, step:1, onChange: () => {this.draw();}});
-		this.addControlRange({ title: `圆环分段`, hashData: this.data, key: "tubularSegments",  max: 500, min: 0, step:1, onChange: () => {this.draw();}});
-		this.addControlRange({ title: `中心角`, hashData: this.data, key: "arc",  max: 360, min: 0, step:10, onChange: () => {this.draw();}});
-		this.addControlCheck({ title: `仅线框`, hashData: this.material1, key: 'wireframe'});
+		this.ctrlBar.addControlRange({ title: `圆环半径`, hashData: this.data, key: "radius",  max: 1000, min: 10, step:1, onChange: () => {this.draw();}});
+		this.ctrlBar.addControlRange({ title: `管子直径`, hashData: this.data, key: "tube",  max: 1000, min: 10, step:1, onChange: () => {this.draw();}});
+		this.ctrlBar.addControlRange({ title: `管子分段`, hashData: this.data, key: "radialSegments",  max: 500, min: 3, step:1, onChange: () => {this.draw();}});
+		this.ctrlBar.addControlRange({ title: `圆环分段`, hashData: this.data, key: "tubularSegments",  max: 500, min: 0, step:1, onChange: () => {this.draw();}});
+		this.ctrlBar.addControlRange({ title: `中心角`, hashData: this.data, key: "arc",  max: 360, min: 0, step:10, onChange: () => {this.draw();}});
+		this.ctrlBar.addControlCheck({ title: `仅线框`, hashData: this.material1, key: 'wireframe'});
 	}
 
 	draw() {

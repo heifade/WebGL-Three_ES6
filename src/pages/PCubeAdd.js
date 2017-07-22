@@ -12,8 +12,8 @@ export default class PCubeAdd extends Base {
       this.add();
     }
 
-    this.addControlButton({ title: '添加', onClick: () => {this.add();}});
-    this.addControlButton({ title: '删除', onClick: () => {this.remove();}});
+    this.ctrlBar.addControlButton({ title: '添加', onClick: () => {this.add();}});
+    this.ctrlBar.addControlButton({ title: '删除', onClick: () => {this.remove();}});
   }
 
   add() {

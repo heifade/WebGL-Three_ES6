@@ -13,10 +13,10 @@ export default class PCubeScale extends Base {
     this.draw();
 
 
-    this.addControlRange({ title: `X`, hashData: this.mesh.scale, key: "x",  max: 5, min: 1, step:0.1});
-    this.addControlRange({ title: `Y`, hashData: this.mesh.scale, key: "y",  max: 5, min: 1, step:0.1});
-    this.addControlRange({ title: `Z`, hashData: this.mesh.scale, key: "z",  max: 5, min: 1, step:0.1});
-    this.addControlCheck({ title: `仅线框`, hashData: this.material1, key: 'wireframe'});
+    this.ctrlBar.addControlRange({ title: `X`, hashData: this.mesh.scale, key: "x",  max: 5, min: 1, step:0.1});
+    this.ctrlBar.addControlRange({ title: `Y`, hashData: this.mesh.scale, key: "y",  max: 5, min: 1, step:0.1});
+    this.ctrlBar.addControlRange({ title: `Z`, hashData: this.mesh.scale, key: "z",  max: 5, min: 1, step:0.1});
+    this.ctrlBar.addControlCheck({ title: `仅线框`, hashData: this.material1, key: 'wireframe'});
 	}
 
 	draw() {

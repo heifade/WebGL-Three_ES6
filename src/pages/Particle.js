@@ -19,12 +19,12 @@ export default class Particle extends Base {
 
     this.draw();
 
-    this.addControlRange({ title: `圆环半径`, hashData: this.data, key: "radius",  max: 1000, min: 10, step:1, onChange: () => {this.draw();}});
-		this.addControlRange({ title: `管子直径`, hashData: this.data, key: "tube",  max: 1000, min: 10, step:1, onChange: () => {this.draw();}});
-		this.addControlRange({ title: `管子分段`, hashData: this.data, key: "radialSegments",  max: 1000, min: 3, step:1, onChange: () => {this.draw();}});
-		this.addControlRange({ title: `圆环分段`, hashData: this.data, key: "tubularSegments",  max: 500, min: 0, step:1, onChange: () => {this.draw();}});
-		this.addControlRange({ title: `圆心旋转`, hashData: this.data, key: "p",  max: 10, min: 0, step:1, onChange: () => {this.draw();}});
-		this.addControlRange({ title: `环面旋转`, hashData: this.data, key: "q",  max: 100, min: 0, step:1, onChange: () => {this.draw();}});
+    this.ctrlBar.addControlRange({ title: `圆环半径`, hashData: this.data, key: "radius",  max: 1000, min: 10, step:1, onChange: () => {this.draw();}});
+		this.ctrlBar.addControlRange({ title: `管子直径`, hashData: this.data, key: "tube",  max: 1000, min: 10, step:1, onChange: () => {this.draw();}});
+		this.ctrlBar.addControlRange({ title: `管子分段`, hashData: this.data, key: "radialSegments",  max: 1000, min: 3, step:1, onChange: () => {this.draw();}});
+		this.ctrlBar.addControlRange({ title: `圆环分段`, hashData: this.data, key: "tubularSegments",  max: 500, min: 0, step:1, onChange: () => {this.draw();}});
+		this.ctrlBar.addControlRange({ title: `圆心旋转`, hashData: this.data, key: "p",  max: 10, min: 0, step:1, onChange: () => {this.draw();}});
+		this.ctrlBar.addControlRange({ title: `环面旋转`, hashData: this.data, key: "q",  max: 100, min: 0, step:1, onChange: () => {this.draw();}});
 		
 	}
 

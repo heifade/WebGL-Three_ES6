@@ -23,15 +23,15 @@ export default class Sphere extends Base {
 
     this.drawSphere();
 
-    this.addControlRange({ title: '半径', hashData: this.data, key: "radius",  max: 1000, min: 0, step:1, onChange: () => {this.drawSphere();}});
-    this.addControlRange({ title: 'widthSegments', hashData: this.data, key: "widthSegments",  max: 200, min: 3, step:1, onChange: () => {this.drawSphere();}});
-    this.addControlRange({ title: 'heightSegments', hashData: this.data, key: "heightSegments",  max: 200, min: 2, step:1, onChange: () => {this.drawSphere();}});
-    this.addControlRange({ title: 'phiStart', hashData: this.data, key: "phiStart",  max: 360, min: 0, step:1, onChange: () => {this.drawSphere();}});
-    this.addControlRange({ title: 'phiLength', hashData: this.data, key: "phiLength",  max: 360, min: 0, step:1, onChange: () => {this.drawSphere();}});
-    this.addControlRange({ title: 'thetaStart', hashData: this.data, key: "thetaStart",  max: 180, min: 0, step:1, onChange: () => {this.drawSphere();}});
-    this.addControlRange({ title: 'thetaLength', hashData: this.data, key: "thetaLength",  max: 180, min: 0, step:1, onChange: () => {this.drawSphere();}});
+    this.ctrlBar.addControlRange({ title: '半径', hashData: this.data, key: "radius",  max: 1000, min: 0, step:1, onChange: () => {this.drawSphere();}});
+    this.ctrlBar.addControlRange({ title: 'widthSegments', hashData: this.data, key: "widthSegments",  max: 200, min: 3, step:1, onChange: () => {this.drawSphere();}});
+    this.ctrlBar.addControlRange({ title: 'heightSegments', hashData: this.data, key: "heightSegments",  max: 200, min: 2, step:1, onChange: () => {this.drawSphere();}});
+    this.ctrlBar.addControlRange({ title: 'phiStart', hashData: this.data, key: "phiStart",  max: 360, min: 0, step:1, onChange: () => {this.drawSphere();}});
+    this.ctrlBar.addControlRange({ title: 'phiLength', hashData: this.data, key: "phiLength",  max: 360, min: 0, step:1, onChange: () => {this.drawSphere();}});
+    this.ctrlBar.addControlRange({ title: 'thetaStart', hashData: this.data, key: "thetaStart",  max: 180, min: 0, step:1, onChange: () => {this.drawSphere();}});
+    this.ctrlBar.addControlRange({ title: 'thetaLength', hashData: this.data, key: "thetaLength",  max: 180, min: 0, step:1, onChange: () => {this.drawSphere();}});
 
-    this.addControlCheck({ title: `仅线框`, hashData: this.material1, key: 'wireframe'});
+    this.ctrlBar.addControlCheck({ title: `仅线框`, hashData: this.material1, key: 'wireframe'});
   }
 
   // 球体

@@ -78,17 +78,21 @@ class Index {
 		const $liMenuItems = $html.find('.liMenuItem');
 		const $divControl = $html.find('.divControl');
 
-		$liMenuItems.click(function(li) {
+		$liMenuItems.click((li) => {
 			const className = menuList[$(li.target).index()].className;
 
 			$liMenuItems.removeClass('active');
 			li.target.className = 'active';
 
-			$divContainer.html('');
+			if(this.instance) {
+				this.instance.dispose();
+			}
 
-			let instance = new className($divContainer, $divControl);
-			instance.render();
-			instance.animate();
+			$divContainer.empty();
+
+			this.instance = new className($divContainer, $divControl);
+			this.instance.render();
+			this.instance.animate();
 
 		});
 	}

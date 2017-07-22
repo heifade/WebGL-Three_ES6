@@ -18,7 +18,7 @@ export default class CylinderGroup extends Base {
     this.drawSphere({radiusTop: 100, radiusBottom: 200, height: 800, radiusSegments: 100, heightSegments: 10, x: 0, y: 400, z: 0});
     this.drawSphere({radiusTop: 200, radiusBottom: 100, height: 800, radiusSegments: 100, heightSegments: 10, x: 0, y: 250, z: 0});
 
-    this.addControlCheck({ title: `仅线框`, hashData: this.material1, key: 'wireframe'});
+    this.ctrlBar.addControlCheck({ title: `仅线框`, hashData: this.material1, key: 'wireframe'});
   }
 
   // 圆柱

@@ -17,10 +17,10 @@ export default class Circle extends Base {
 
     this.draw();
 
-    this.addControlRange({ title: '半径', hashData: this.data, key: "radius",  max: 1000, min: 10, step:1, onChange: () => {this.draw();}});
-    this.addControlRange({ title: '分段', hashData: this.data, key: "segments",  max: 100, min: 3, step:1, onChange: () => {this.draw();}});
-    this.addControlRange({ title: '开始角度', hashData: this.data, key: "thetaStart",  max: 360, min: 0, step:1, onChange: () => {this.draw();}});
-    this.addControlRange({ title: '扇角度', hashData: this.data, key: "thetaLength",  max: 360, min: 0, step:1, onChange: () => {this.draw();}});
+    this.ctrlBar.addControlRange({ title: '半径', hashData: this.data, key: "radius",  max: 1000, min: 10, step:1, onChange: () => {this.draw();}});
+    this.ctrlBar.addControlRange({ title: '分段', hashData: this.data, key: "segments",  max: 100, min: 3, step:1, onChange: () => {this.draw();}});
+    this.ctrlBar.addControlRange({ title: '开始角度', hashData: this.data, key: "thetaStart",  max: 360, min: 0, step:1, onChange: () => {this.draw();}});
+    this.ctrlBar.addControlRange({ title: '扇角度', hashData: this.data, key: "thetaLength",  max: 360, min: 0, step:1, onChange: () => {this.draw();}});
 	}
 	
   draw() {

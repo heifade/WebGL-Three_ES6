@@ -23,15 +23,15 @@ export default class CylinderGroup extends Base {
 
     this.draw();
 
-    this.addControlRange({ title: `顶半径`, hashData: this.data, key: "radiusTop",  max: 1000, min: 1, step:1, onChange: ()=>{ this.draw() }});
-    this.addControlRange({ title: `底半径`, hashData: this.data, key: "radiusBottom",  max: 1000, min: 1, step:1, onChange: ()=>{ this.draw() }});
-    this.addControlRange({ title: `高`, hashData: this.data, key: "height",  max: 1000, min: 1, step:1, onChange: ()=>{ this.draw() }});
-    this.addControlRange({ title: `竖侧面个数`, hashData: this.data, key: "radiusSegments",  max: 100, min: 2, step:1, onChange: ()=>{ this.draw() }});
-    this.addControlRange({ title: `横侧面个数`, hashData: this.data, key: "heightSegments",  max: 100, min: 1, step:1, onChange: ()=>{ this.draw() }});
-    this.addControlCheck({ title: `显示两头`, hashData: this.data, key: "openEnded", onChange: ()=>{ this.draw() }});
-    this.addControlRange({ title: `开始角度`, hashData: this.data, key: "thetaStart",  max: 360, min: 0, step:1, onChange: ()=>{ this.draw() }});
-    this.addControlRange({ title: `角度`, hashData: this.data, key: "thetaLength",  max: 360, min: 0, step:1, onChange: ()=>{ this.draw() }});
-    this.addControlCheck({ title: `仅线框`, hashData: this.material1, key: 'wireframe', onChange: ()=>{ this.draw() }});
+    this.ctrlBar.addControlRange({ title: `顶半径`, hashData: this.data, key: "radiusTop",  max: 1000, min: 1, step:1, onChange: ()=>{ this.draw() }});
+    this.ctrlBar.addControlRange({ title: `底半径`, hashData: this.data, key: "radiusBottom",  max: 1000, min: 1, step:1, onChange: ()=>{ this.draw() }});
+    this.ctrlBar.addControlRange({ title: `高`, hashData: this.data, key: "height",  max: 1000, min: 1, step:1, onChange: ()=>{ this.draw() }});
+    this.ctrlBar.addControlRange({ title: `竖侧面个数`, hashData: this.data, key: "radiusSegments",  max: 100, min: 2, step:1, onChange: ()=>{ this.draw() }});
+    this.ctrlBar.addControlRange({ title: `横侧面个数`, hashData: this.data, key: "heightSegments",  max: 100, min: 1, step:1, onChange: ()=>{ this.draw() }});
+    this.ctrlBar.addControlCheck({ title: `显示两头`, hashData: this.data, key: "openEnded", onChange: ()=>{ this.draw() }});
+    this.ctrlBar.addControlRange({ title: `开始角度`, hashData: this.data, key: "thetaStart",  max: 360, min: 0, step:1, onChange: ()=>{ this.draw() }});
+    this.ctrlBar.addControlRange({ title: `角度`, hashData: this.data, key: "thetaLength",  max: 360, min: 0, step:1, onChange: ()=>{ this.draw() }});
+    this.ctrlBar.addControlCheck({ title: `仅线框`, hashData: this.material1, key: 'wireframe', onChange: ()=>{ this.draw() }});
   }
 
   // 圆柱

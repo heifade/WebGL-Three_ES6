@@ -16,11 +16,11 @@ export default class PCubeByVertices extends Base {
     let {geometry} = this.mesh1;
 
     for(let i=0;i<8;i++){
-      this.addControlRange({ title: `点${i+1}X`, hashData: geometry.vertices[i], key: "x",  max: 5, min: -5, step:0.1, onChange: () => {geometry.verticesNeedUpdate = true;}});
-      this.addControlRange({ title: `点${i+1}Y`, hashData: geometry.vertices[i], key: "y",  max: 5, min: -5, step:0.1, onChange: () => {geometry.verticesNeedUpdate = true;}});
-      this.addControlRange({ title: `点${i+1}Z`, hashData: geometry.vertices[i], key: "z",  max: 5, min: -5, step:0.1, onChange: () => {geometry.verticesNeedUpdate = true;}});  
+      this.ctrlBar.addControlRange({ title: `点${i+1}X`, hashData: geometry.vertices[i], key: "x",  max: 5, min: -5, step:0.1, onChange: () => {geometry.verticesNeedUpdate = true;}});
+      this.ctrlBar.addControlRange({ title: `点${i+1}Y`, hashData: geometry.vertices[i], key: "y",  max: 5, min: -5, step:0.1, onChange: () => {geometry.verticesNeedUpdate = true;}});
+      this.ctrlBar.addControlRange({ title: `点${i+1}Z`, hashData: geometry.vertices[i], key: "z",  max: 5, min: -5, step:0.1, onChange: () => {geometry.verticesNeedUpdate = true;}});  
     }
-    this.addControlCheck({ title: `仅线框`, hashData: this.material1, key: 'wireframe'});
+    this.ctrlBar.addControlCheck({ title: `仅线框`, hashData: this.material1, key: 'wireframe'});
 	}
 
 	draw({x = 0, y = 0, z = 0, w = 300, h = 300, d = 300, color = 0xffffff}) {
