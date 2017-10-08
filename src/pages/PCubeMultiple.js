@@ -1,8 +1,8 @@
 import * as THREE from 'three';
 import Base from './Base';
 
-// 立方体
-export default class PCube extends Base {
+// 立方体多个
+export default class PCubeMultiple extends Base {
 	constructor(container, $control){
 		super(container, $control, {});
 

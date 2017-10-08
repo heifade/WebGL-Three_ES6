@@ -1,5 +1,6 @@
 import Stats from '../../libs/stats';
 import $ from "jquery";
+import * as THREE from "three";
 
 export default class CtrlBar {
   constructor($control, base) {
@@ -33,10 +34,16 @@ export default class CtrlBar {
     this.initStats();
 
     this.addControlRange({ title: `场景转速`, hashData: controlValue, key: "rotateSpeed",  max: 10, min: 0, step:1, onChange: () => {}});
-    this.addControlRange({ title: `场景雾化`, hashData: controlValue, key: "fog",  max: 10, min: 0, step:1, onChange: (value) => {this.addFog(value / 10000);}});
-    this.addControlCheck({ title: `光源线`, hashData: controlValue.pointLight, key: 'showLight', onChange: (value) => { this.spotLightShadowCamera.visible = value; }});
+    this.addControlRange({ title: `场景雾化`, hashData: controlValue, key: "fog",  max: 10, min: 0, step:1, onChange: (value) => {
+      this.base.addFog(value / 10000);
+    }});
+    this.addControlCheck({ title: `光源线`, hashData: controlValue.pointLight, key: 'showLight', onChange: (value) => {
+      this.base.spotLightShadowCamera.visible = value;
+    }});
     this.addControlCheck({ title: `光源动`, hashData: controlValue.pointLight, key: 'moveLight'});
-    this.addControlColor({ title: '光色', hashData: controlValue.pointLight, key: 'color', onChange: (value) => {this.spotLight.color = new THREE.Color(value);} });
+    this.addControlColor({ title: '光色', hashData: controlValue.pointLight, key: 'color', onChange: (value) => {
+      this.base.spotLight.color = new THREE.Color(value);
+    }});
     this.addControlRange({ title: `光源x`, hashData: controlValue.pointLight, key: "x",  max: 5000, min: -5000, step:100, onChange: (value) => {
       let {x, y, z} = controlValue.pointLight;
       this.base.pointLight.position.set( x, y, z );

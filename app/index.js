@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import Line from '../src/pages/Line';
 import PCubeByVertices from '../src/pages/PCubeByVertices';
-import PCube from '../src/pages/PCube';
+import PCubeMultiple from '../src/pages/PCubeMultiple';
 import PCubeAdd from '../src/pages/PCubeAdd';
 import PinMian from '../src/pages/PinMian';
 import Grid from '../src/pages/Grid';
@@ -20,6 +20,20 @@ import TorusKnot from '../src/pages/TorusKnot';
 import Text from '../src/pages/Text';
 import Combination from '../src/pages/Combination';
 import Particle from '../src/pages/Particle';
+import QuarkUIIndex from '../src/pages/QuarkUIIndex';
+import Tube from '../src/pages/Tube';
+import Tetrahedron from '../src/pages/Tetrahedron';
+import Polyhedron from '../src/pages/Polyhedron';
+// import Parametric from '../src/pages/Parametric';
+import Octahedron from '../src/pages/Octahedron';
+import Lathe from '../src/pages/Lathe';
+import Icosahedron from '../src/pages/Icosahedron';
+import Cube from '../src/pages/Cube';
+
+
+
+
+
 import '../css/index.less';
 
 class Index {
@@ -31,10 +45,13 @@ class Index {
 			{name: '自定义图形', className: Shape},
 			{name: '平面', className: Plane},
 			{name: '网格', className: Grid},
+			{name: '立方体', className: Cube},
 			{name: '立方体(自制)', className: PCubeByVertices},
 			{name: '三角锥(自制)', className: TriangularCone},
-			{name: '立方体', className: PCube},
+			{name: '立方体组合', className: PCubeMultiple},
 			{name: '立方体，添加删除', className: PCubeAdd},
+			{name: '八面体', className: Octahedron},
+			{name: '十二面体', className: Icosahedron},
 			{name: '圆环', className: Torus},
 			{name: '环面纽结', className: TorusKnot},
 			{name: '自定义平面', className: PinMian},
@@ -47,6 +64,17 @@ class Index {
 			{name: '文本', className: Text},
 			{name: '粒子', className: Particle},
 			{name: '组合', className: Combination},
+			{name: '管子', className: Tube},
+			{name: '四面体', className: Tetrahedron},
+			{name: '多面体', className: Polyhedron},
+			// {name: '参数曲面体', className: Parametric},
+			
+			{name: '车床', className: Lathe},
+			
+
+			
+			
+			{name: 'QuarkUI首页', className: QuarkUIIndex},
 		];
 
 		let menuListHTML = menuList.map((menu, index) => {

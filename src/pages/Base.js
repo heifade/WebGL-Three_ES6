@@ -201,25 +201,31 @@ export default class Base {
     let {x, y, z} = this.controlValue.pointLight;
 
     //点光源
-    this.pointLight = new THREE.PointLight("#ccffcc", 1, 8000);
+    this.pointLight = new THREE.PointLight("#cccccc"); //cccccc
+    this.pointLight.intensity = 1; //光强度
+    this.pointLight.distance = 10000; //光强衰减到0需要的距离
     this.pointLight.position.set( x, y, z );
     this.lightGroup.add(this.pointLight);
 
     //环境光
-    this.mmbientLight = new THREE.AmbientLight('#333333');
+    this.mmbientLight = new THREE.AmbientLight('#333333'); //333333
     this.lightGroup.add(this.mmbientLight);
 
     //聚光灯光源
-    this.spotLight = new THREE.SpotLight(0xffffff);
+    this.spotLight = new THREE.SpotLight('#ffffff', 1, 0, 90 / 180 * Math.PI); //ffffff
     this.spotLight.position.set( x, y, z );
     this.spotLight.castShadow = this.controlValue.showShadow;
     this.spotLight.shadow.camera.near = 10;
     this.spotLight.shadow.camera.far = 5000;
     this.spotLight.shadow.camera.fov = 30;
-    this.spotLight.distance = 0;
     this.lightGroup.add(this.spotLight);
 
-    // this.spotLight.angle = 0.4;
+
+    //平行光
+    // this.directionalLight = new THREE.DirectionalLight('#333333', 1);
+    // this.directionalLight.position.set(x, y, z);
+    // this.lightGroup.add(this.directionalLight);
+
     this.spotLightShadowCamera = new THREE.CameraHelper(this.spotLight.shadow.camera);
     this.spotLightShadowCamera.visible = this.controlValue.showLight;
     this.scene.add(this.spotLightShadowCamera); //显示光源物体
@@ -273,6 +279,8 @@ export default class Base {
 
       requestAnimationFrame(run);
     }
+
+    
 
     run();
   }

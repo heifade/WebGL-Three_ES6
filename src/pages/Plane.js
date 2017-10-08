@@ -14,9 +14,9 @@ export default class Plane extends Base {
       500,    // width
       500,   // height
       3,   // widthSegments 
-      3,   // heightSegments 
+      4,   // heightSegments 
     );
-    let material = new THREE.MeshNormalMaterial( {color: 0xff0000, side: THREE.DoubleSide} );
+    let material = new THREE.MeshNormalMaterial( {side: THREE.DoubleSide} );
     material.wireframe = true;
     
     let mesh = new THREE.Mesh( geometry, material );

@@ -25,7 +25,6 @@ export default class Particle extends Base {
 		this.ctrlBar.addControlRange({ title: `圆环分段`, hashData: this.data, key: "tubularSegments",  max: 500, min: 0, step:1, onChange: () => {this.draw();}});
 		this.ctrlBar.addControlRange({ title: `圆心旋转`, hashData: this.data, key: "p",  max: 10, min: 0, step:1, onChange: () => {this.draw();}});
 		this.ctrlBar.addControlRange({ title: `环面旋转`, hashData: this.data, key: "q",  max: 100, min: 0, step:1, onChange: () => {this.draw();}});
-		
 	}
 
 	draw() {
@@ -69,6 +68,7 @@ export default class Particle extends Base {
       blending: THREE.AdditiveBlending,
       map: this.createTexture(),
     });
+    material.alphaTest = 0.9;
 
     this.system1 = new THREE.Points(geometry, material);
     this.system1.sortParticles = true;
@@ -90,7 +90,7 @@ export default class Particle extends Base {
     gradient.addColorStop(0, 'rgba(255,255,255,1)');
     gradient.addColorStop(0.2, 'rgba(0,255,255,1)');
     gradient.addColorStop(0.4, 'rgba(0,0,64,1)');
-    gradient.addColorStop(1, 'rgba(0,0,0,1)');
+    gradient.addColorStop(1, 'rgba(0,0,64,0)');
     context.fillStyle = gradient;
     context.fillRect(0,0,canvas.width, canvas.height);
 
